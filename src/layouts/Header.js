@@ -1,7 +1,32 @@
-import React from 'react'
+import React from 'react';
+import { Route, Switch } from 'react-router-dom'
+
+import '../styles/Header.css'
+import img1 from '../images/header1.jpg'
+import img2 from '../images/header2.jpg'
+import img3 from '../images/header3.jpg'
+
 const Header = () => {
     return ( 
-        <div>Header</div>
+        <>
+        <Switch>
+        <Route path='/' exact render={() => (
+            <img src={img1} alt="landscape" />
+        )}/>
+        <Route path='/products' render={() => (
+            <img src={img2} alt="landscape" />
+        )}/>
+        <Route path='/contact' render={() => (
+            <img src={img3} alt="landscape" />
+        )}/>
+        <Route path='/admin' render={() => (
+            <img src={img3} alt="landscape" />
+        )}/>
+        <Route render={() => (
+            <img src={img1} alt="landscape" />
+        )}/>
+         </Switch>   
+        </>
      );
 }
  
